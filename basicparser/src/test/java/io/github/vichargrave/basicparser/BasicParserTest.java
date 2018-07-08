@@ -1,4 +1,4 @@
-package com.example.basicparser;
+package io.github.vichargrave.basicparser;
 
 import org.junit.Test;
 import org.kitesdk.morphline.api.MorphlineCompilationException;

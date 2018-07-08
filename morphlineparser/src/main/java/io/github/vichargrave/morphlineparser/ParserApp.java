@@ -1,4 +1,4 @@
-package com.example.morphlineparser;
+package io.github.vichargrave.morphlineparser;
 
 import org.kitesdk.morphline.api.Record;
 

@@ -1,4 +1,4 @@
-package com.example.morphlineparser;
+package io.github.vichargrave.morphlineparser;
 
 import com.google.common.collect.ListMultimap;
 import org.junit.Test;

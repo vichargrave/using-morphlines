@@ -1,4 +1,4 @@
-package com.example.morphlineparser;
+package io.github.vichargrave.morphlineparser;
 
 import java.io.*;
 import java.util.List;

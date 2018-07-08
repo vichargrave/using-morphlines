@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <groupId>com.example</groupId>
+    <groupId>io.github.vichargrave</groupId>
     <artifactId>using-morphlines</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>

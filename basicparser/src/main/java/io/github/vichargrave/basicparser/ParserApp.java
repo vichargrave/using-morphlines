@@ -1,4 +1,4 @@
-package com.example.basicparser;
+package io.github.vichargrave.basicparser;
 
 import org.kitesdk.morphline.api.Command;
 import org.kitesdk.morphline.api.MorphlineContext;
