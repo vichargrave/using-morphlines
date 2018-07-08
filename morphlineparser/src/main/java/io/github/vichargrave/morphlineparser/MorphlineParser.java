@@ -30,18 +30,6 @@ public class MorphlineParser {
         this.morphlineId = morphlineId;
     }
 
-    public MorphlineParser(String morphlineFile, boolean clearAttachments) {
-        collector = new Collector(clearAttachments);
-        this.morphlineFile = new File(morphlineFile);
-        this.morphlineId = null;
-    }
-
-    public MorphlineParser(String morphlineFile, String morphlineId, boolean clearAttachments) {
-        collector = new Collector(clearAttachments);
-        this.morphlineFile = new File(morphlineFile);
-        this.morphlineId = morphlineId;
-    }
-
     private void createMorphline() throws IOException {
         morphlineContext = new MorphlineContext.Builder().build();
         morphline = new Compiler().compile(morphlineFile, morphlineId, morphlineContext, collector);

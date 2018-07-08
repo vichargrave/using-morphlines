@@ -10,7 +10,7 @@ import com.google.common.collect.ListMultimap;
 public class ParserApp {
 
     private static void usage() {
-        System.out.println("usage: java ... <morphline.conf> <data file> <morphline ID> <clear attachments>");
+        System.out.println("usage: java ... <morphline.conf> <data file> <morphline ID>");
         System.exit(1);
     }
 
@@ -31,17 +31,7 @@ public class ParserApp {
             System.exit(-1);
         }
 
-        if (!args[3].contentEquals("0") && !args[3].contentEquals("1")) {
-            System.err.println("Clear attachments flag must be either 0 or 1");
-            System.exit(-1);
-        }
-
-        Boolean clearAttachments = false;
-        if (args[3].contentEquals("1")) {
-            clearAttachments = true;
-        }
-
-        MorphlineParser parser = new MorphlineParser(args[0], args[2], clearAttachments);
+        MorphlineParser parser = new MorphlineParser(args[0], args[2]);
         List<Record> records = parser.parse(fileToParse);
         if (records.size() > 0) {
             for (Record record : records) {
