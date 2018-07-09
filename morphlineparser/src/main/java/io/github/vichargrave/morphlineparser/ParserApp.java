@@ -15,7 +15,7 @@ public class ParserApp {
     }
 
     public static void main(String[] args) throws IOException {
-        if (args.length != 4) {
+        if (args.length != 3) {
             usage();
         }
 
