@@ -10,7 +10,7 @@ import com.google.common.collect.ListMultimap;
 public class ParserApp {
 
     private static void usage() {
-        System.out.println("usage: java ... <morphline.conf> <data file> <morphline ID>");
+        System.out.println("usage: java ... <morphline conf> <data file> <morphline ID>");
         System.exit(1);
     }
 
