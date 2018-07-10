@@ -21,7 +21,6 @@ public class SyslogParserTest {
         if (records.size() == 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertNotNull("message", out.get("message").get(0));
             assertEquals("Alert_Level", "3", out.get("Alert_Level").get(0));
         } else {
             System.out.println("Parsing failure");
