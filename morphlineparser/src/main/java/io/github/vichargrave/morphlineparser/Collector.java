@@ -2,7 +2,6 @@ package io.github.vichargrave.morphlineparser;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.kitesdk.morphline.base.Notifications;
 import org.kitesdk.morphline.api.Command;
