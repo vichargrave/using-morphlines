@@ -16,7 +16,6 @@ public final class Collector implements Command {
 
     private Command parent;
     private List<Record> records;
-    private boolean clearAttachments = false;
 
     private static final Logger LOG = LoggerFactory.getLogger(Collector.class);
 
