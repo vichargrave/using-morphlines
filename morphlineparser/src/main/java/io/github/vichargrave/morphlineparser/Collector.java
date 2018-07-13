@@ -6,8 +6,6 @@ import java.util.List;
 import org.kitesdk.morphline.base.Notifications;
 import org.kitesdk.morphline.api.Command;
 import org.kitesdk.morphline.api.Record;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
 
@@ -15,8 +13,6 @@ public final class Collector implements Command {
 
     private Command parent;
     private List<Record> records;
-
-    private static final Logger LOG = LoggerFactory.getLogger(Collector.class);
 
     public Collector() {
         reset();
