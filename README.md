@@ -6,7 +6,7 @@ Morphlines example code being developed for an upcoming book tentatively entitle
 
 To build this project, do the following: 
 
-    1. cd using-mmorphlines
+    1. cd using-morphlines
     2. Set the ${dict_path} in conf/env.conf to the absolute path of the conf/dict directory.
     3. mvn clean package
 
