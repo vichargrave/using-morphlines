@@ -35,7 +35,7 @@ public class MorphlineParser {
         morphline = new Compiler().compile(morphlineFile, morphlineId, morphlineContext, collector);
     }
 
-    private List<Record> parseStream(InputStream in) throws IOException {
+    public List<Record> parse(InputStream in) throws IOException {
         collector.reset();
         createMorphline();
         Record record = new Record();
@@ -47,12 +47,12 @@ public class MorphlineParser {
 
     public List<Record> parse(File fileToParse) throws IOException {
         InputStream in = new BufferedInputStream(new FileInputStream(fileToParse));
-        return parseStream(in);
+        return parse(in);
     }
 
     public List<Record> parse(String lineToParse) throws IOException {
         ContentStreamBase.StringStream stream = new ContentStreamBase.StringStream(lineToParse);
         InputStream in = stream.getStream();
-        return parseStream(in);
+        return parse(in);
     }
 }
