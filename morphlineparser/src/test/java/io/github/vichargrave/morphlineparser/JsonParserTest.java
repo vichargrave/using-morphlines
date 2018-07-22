@@ -22,11 +22,11 @@ public class JsonParserTest {
         if (records.size() == 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("tweet_text", "sample tweet one", out.get("tweet_text").get(0));
-            assertEquals("tweet_source", "href=\"http://sample.com\"", out.get("tweet_source").get(0));
-            assertEquals("tweet_id", "1234567891", out.get("tweet_id").get(0));
-            assertEquals("tweet_user_name", "vichargrave", out.get("tweet_user_name").get(0));
-            assertEquals("tweet_date", "Wed Sep 05 01:01:01 +0000 1985", out.get("tweet_date").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("id", 11111112, out.get("id").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
         }
         else {
             System.out.println("Parsing failure");
@@ -41,11 +41,11 @@ public class JsonParserTest {
         if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("tweet_text", "sample tweet one", out.get("tweet_text").get(0));
-            assertEquals("tweet_source", "href=\"http://sample.com\"", out.get("tweet_source").get(0));
-            assertEquals("tweet_id", "1234567891", out.get("tweet_id").get(0));
-            assertEquals("tweet_user_name", "vichargrave", out.get("tweet_user_name").get(0));
-            assertEquals("tweet_date", "Wed Sep 05 01:01:01 +0000 1985", out.get("tweet_date").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("id", 11111112, out.get("id").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
         }
         else {
             System.out.println("Parsing failure");
@@ -61,11 +61,11 @@ public class JsonParserTest {
         if (records.size() == 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("tweet_text", "sample tweet one", out.get("tweet_text").get(0));
-            assertEquals("tweet_source", "href=\"http://sample.com\"", out.get("tweet_source").get(0));
-            assertEquals("tweet_id", "1234567891", out.get("tweet_id").get(0));
-            assertEquals("tweet_user_name", "vichargrave", out.get("tweet_user_name").get(0));
-            assertEquals("tweet_date", "Wed Sep 05 01:01:01 +0000 1985", out.get("tweet_date").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("id", 11111112, out.get("id").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
         }
         else {
             System.out.println("Parsing failure");
@@ -80,11 +80,11 @@ public class JsonParserTest {
         if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("tweet_text", "sample tweet one", out.get("tweet_text").get(0));
-            assertEquals("tweet_source", "href=\"http://sample.com\"", out.get("tweet_source").get(0));
-            assertEquals("tweet_id", "1234567891", out.get("tweet_id").get(0));
-            assertEquals("tweet_user_name", "vichargrave", out.get("tweet_user_name").get(0));
-            assertEquals("tweet_date", "Wed Sep 05 01:01:01 +0000 1985", out.get("tweet_date").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("id", 11111112, out.get("id").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
         }
         else {
             System.out.println("Parsing failure");
