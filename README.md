@@ -1,3 +1,4 @@
+
 # using-morphlines 
 
 Morphlines example code being developed for an upcoming book tentatively entitled **Using Morphlines**.
@@ -7,10 +8,10 @@ Morphlines example code being developed for an upcoming book tentatively entitle
 To build the jars, do the following: 
 
  1. `cd using-morphlines`
- 2. Set the ${dict_path} in conf/env.conf to the absolute path of the conf/dict directory.
+ 2. Set the `${dict_path}` in *conf/env.conf* to the absolute path of the conf/dict directory.
  3. `mvn clean package`
 
-You can also build the jars with an Maven aware IDE like IntelliJ, which is what I use.  To build that way, do the following:
+You can also build the jars with a Maven aware IDE like IntelliJ, which is what I use.  To build that way, do the following:
 
  1. At the main dialog box, click on **Open**.
  2. Navigate to the *using-morphline* directory.
