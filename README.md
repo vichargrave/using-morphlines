@@ -8,7 +8,7 @@ Morphlines example code being developed for an upcoming book tentatively entitle
 To build the jars, do the following: 
 
  1. `cd using-morphlines`
- 2. Set the `${dict_path}` in *conf/env.conf* to the absolute path of the conf/dict directory.
+ 2. Set the `${dict_path}` in *conf/env.conf* to the absolute path of the *conf/dict* directory.
  3. `mvn clean package`
 
 You can also build the jars with a Maven aware IDE like IntelliJ, which is what I use.  To build that way, do the following:
@@ -22,3 +22,5 @@ You can also build the jars with a Maven aware IDE like IntelliJ, which is what 
  7. Click on **Execute**.
  
  The jars will be located in the *target* directory of each subproject.
+ 
+ **Note** that you have to set `${dict_path}` for either building method.
