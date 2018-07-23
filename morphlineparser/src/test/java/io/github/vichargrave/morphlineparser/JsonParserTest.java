@@ -22,11 +22,23 @@ public class JsonParserTest {
         if (records.size() == 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("text", "sample tweet one", out.get("text").get(0));
-            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
             assertEquals("id", 11111112, out.get("id").get(0));
-            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("id_str", "1234567891", out.get("id_str").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
             assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("retweeted", false, out.get("retweeted").get(0));
+            assertEquals("favorited", false, out.get("favorited").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("user_friends_count", 111, out.get("user_friends_count").get(0));
+            assertEquals("user_favourites_count", 11, out.get("user_favourites_count").get(0));
+            assertEquals("user_location", "Palo Alto", out.get("user_location").get(0));
+            assertEquals("user_description", "desc1", out.get("user_description").get(0));
+            assertEquals("user_statuses_count", 11111, out.get("user_statuses_count").get(0));
+            assertEquals("user_followers_count", 111, out.get("user_followers_count").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
             System.out.println("Parsing failure");
@@ -41,11 +53,23 @@ public class JsonParserTest {
         if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("text", "sample tweet one", out.get("text").get(0));
-            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
             assertEquals("id", 11111112, out.get("id").get(0));
-            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("id_str", "1234567891", out.get("id_str").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
             assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("retweeted", false, out.get("retweeted").get(0));
+            assertEquals("favorited", false, out.get("favorited").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("user_friends_count", 111, out.get("user_friends_count").get(0));
+            assertEquals("user_favourites_count", 11, out.get("user_favourites_count").get(0));
+            assertEquals("user_location", "Palo Alto", out.get("user_location").get(0));
+            assertEquals("user_description", "desc1", out.get("user_description").get(0));
+            assertEquals("user_statuses_count", 11111, out.get("user_statuses_count").get(0));
+            assertEquals("user_followers_count", 111, out.get("user_followers_count").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
             System.out.println("Parsing failure");
@@ -61,11 +85,23 @@ public class JsonParserTest {
         if (records.size() == 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("text", "sample tweet one", out.get("text").get(0));
-            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
             assertEquals("id", 11111112, out.get("id").get(0));
-            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("id_str", "1234567891", out.get("id_str").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
             assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("retweeted", false, out.get("retweeted").get(0));
+            assertEquals("favorited", false, out.get("favorited").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("user_friends_count", 111, out.get("user_friends_count").get(0));
+            assertEquals("user_favourites_count", 11, out.get("user_favourites_count").get(0));
+            assertEquals("user_location", "Palo Alto", out.get("user_location").get(0));
+            assertEquals("user_description", "desc1", out.get("user_description").get(0));
+            assertEquals("user_statuses_count", 11111, out.get("user_statuses_count").get(0));
+            assertEquals("user_followers_count", 111, out.get("user_followers_count").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
             System.out.println("Parsing failure");
@@ -80,11 +116,23 @@ public class JsonParserTest {
         if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
-            assertEquals("text", "sample tweet one", out.get("text").get(0));
-            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
             assertEquals("id", 11111112, out.get("id").get(0));
-            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("id_str", "1234567891", out.get("id_str").get(0));
+            assertEquals("text", "sample tweet one", out.get("text").get(0));
             assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("source", "href=\"http://sample.com\"", out.get("source").get(0));
+            assertEquals("retweeted", false, out.get("retweeted").get(0));
+            assertEquals("favorited", false, out.get("favorited").get(0));
+            assertEquals("retweet_count", 0, out.get("retweet_count").get(0));
+            assertEquals("user_friends_count", 111, out.get("user_friends_count").get(0));
+            assertEquals("user_favourites_count", 11, out.get("user_favourites_count").get(0));
+            assertEquals("user_location", "Palo Alto", out.get("user_location").get(0));
+            assertEquals("user_description", "desc1", out.get("user_description").get(0));
+            assertEquals("user_statuses_count", 11111, out.get("user_statuses_count").get(0));
+            assertEquals("user_followers_count", 111, out.get("user_followers_count").get(0));
+            assertEquals("user_name", "vichargrave", out.get("user_name").get(0));
+            assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
             System.out.println("Parsing failure");
