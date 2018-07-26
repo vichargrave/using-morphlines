@@ -12,7 +12,7 @@
     <groupId>io.github.vichargrave</groupId>
     <artifactId>using-morphlines</artifactId>
     <packaging>pom</packaging>
-    <version>${project.version}</version>
+    <version>0.1</version>
 
     <profiles>
       <profile>

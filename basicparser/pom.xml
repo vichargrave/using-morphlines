@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.github.vichargrave</groupId>
         <artifactId>using-morphlines</artifactId>
-        <version>${project.version}</version>
+        <version>0.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -18,7 +18,7 @@
 
     <groupId>io.github.vichargrave</groupId>
     <artifactId>basicparser</artifactId>
-    <version>${project.version}</version>
+    <version>0.1</version>
     <name>basicparser</name>
     <packaging>jar</packaging>
 
