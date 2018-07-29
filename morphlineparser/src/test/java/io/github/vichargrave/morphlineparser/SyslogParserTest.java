@@ -18,7 +18,7 @@ public class SyslogParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "syslog");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() == 1) {
+        if (records.size() < 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("syslog_timestamp", "Jul  8 10:58:09", out.get("syslog_timestamp").get(0));
@@ -29,7 +29,7 @@ public class SyslogParserTest {
             assertEquals("Description", "Login session opened.", out.get("Description").get(0));
             assertEquals("Details", "ossec-server->/var/log/secure; classification:  pam,syslog,authentication_success,; Jul  8 10:58:08 ossec-server su: pam_unix(su-l:session): session opened for user root by ossec(uid=0)", out.get("Details").get(0));
         } else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 
@@ -49,7 +49,7 @@ public class SyslogParserTest {
             assertEquals("Description", "Login session opened.", out.get("Description").get(0));
             assertEquals("Details", "ossec-server->/var/log/secure; classification:  pam,syslog,authentication_success,; Jul  8 10:58:08 ossec-server su: pam_unix(su-l:session): session opened for user root by ossec(uid=0)", out.get("Details").get(0));
         } else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 

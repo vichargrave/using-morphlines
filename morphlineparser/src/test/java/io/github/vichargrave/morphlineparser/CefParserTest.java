@@ -18,7 +18,7 @@ public class CefParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "cef");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() == 1) {
+        if (records.size() < 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("Violation", "APPFW_SAFECOMMERCE_XFORM", out.get("Violation").get(0));
@@ -45,7 +45,7 @@ public class CefParserTest {
             assertEquals("Security_Severity", "ALERT", out.get("Security_Severity").get(0));
             assertEquals("timestamp", "Dec 19 00:38:09", out.get("timestamp").get(0));
         } else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 
@@ -81,7 +81,7 @@ public class CefParserTest {
             assertEquals("Security_Severity", "ALERT", out.get("Security_Severity").get(0));
             assertEquals("timestamp", "Dec 19 00:38:09", out.get("timestamp").get(0));
         } else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 }

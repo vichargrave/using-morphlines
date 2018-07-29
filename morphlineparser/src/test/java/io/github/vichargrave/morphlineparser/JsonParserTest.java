@@ -19,7 +19,7 @@ public class JsonParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "json");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() == 1) {
+        if (records.size() < 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
@@ -41,7 +41,7 @@ public class JsonParserTest {
             assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 
@@ -72,7 +72,7 @@ public class JsonParserTest {
             assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 
@@ -82,7 +82,7 @@ public class JsonParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() == 1) {
+        if (records.size() < 1) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
@@ -104,7 +104,7 @@ public class JsonParserTest {
             assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 
@@ -135,7 +135,7 @@ public class JsonParserTest {
             assertEquals("user_screen_name", "fake_user1", out.get("user_screen_name").get(0));
         }
         else {
-            System.out.println("Parsing failure");
+            System.out.println("No parsed records produced");
         }
     }
 }

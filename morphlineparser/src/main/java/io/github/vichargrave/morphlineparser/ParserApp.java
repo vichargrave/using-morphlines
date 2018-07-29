@@ -34,8 +34,9 @@ public class ParserApp {
                     ListMultimap out = record.getFields();
                     System.out.println(out.toString());
                 }
-            } else {
-                System.out.println("Parsing failure");
+            }
+            else {
+                System.out.println("No parsed records produced");
                 System.exit(-1);
             }
         }
