@@ -14,7 +14,7 @@ public class CefParserTest {
 
     @Test
     public void testCefLineParser() throws IOException {
-        String lineToParse = "Dec 19 00:38:09 <local0.info> 10.217.31.247 CEF:0|Citrix|NetScaler|NS10.0|APPFW|APPFW_SAFECOMMERCE_XFORM|6|src=10.217.253.78 spt=56116 method=GET request=http://vpx247.example.net/FFC/CreditCardMind.html msg= Transformed (xout) potential credit card numbers seen in server response cn1=652 cn2=610 cs1=pr_ffc cs2=PPE0 cs3=li8MdGfW49uG8tGdSV85ech41a0A000 cs4=ALERT cs5=2012 act=transformed";
+        String lineToParse = "Dec 19 00:38:09 <local0.info> 10.217.31.247 CEF:0|Citrix|NetScaler|NS10.0|APPFW|APPFW_SAFECOMMERCE_XFORM|6|src=10.217.253.78 spt=56116 method=GET request=http://vpx247.example.net/FFC/CreditCardMind.html msg= Transformed (xout) potential credit card numbers seen in server response cn1=652 cn2=610 cs1=pr_ffc cs2=PPE0 cs3=li8MdGfW49uG8tGdSV85ech41a0A000 cs4=ALERT cs5=2012 act=transformed\n";
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "cef");
         List<Record> records = parser.parse(lineToParse);
