@@ -14,7 +14,7 @@ To build the jars, do the following:
 You can also build the jars with a Maven aware IDE like IntelliJ, which is what I use.  To build that way, do the following:
 
  1. At the main dialog box, click on **Open**.
- 2. Navigate to the *using-morphline* directory.
+ 2. Navigate to the *using-morphlines* directory.
  3. Click on **Open**.
  4. Click on **Maven Properties** tab to the right of the main window.
  5. Click on **Maven Execute Goal**.
