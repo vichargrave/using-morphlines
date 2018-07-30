@@ -15,7 +15,7 @@ public class ParserApp {
         System.exit(1);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         if (args.length != 3) {
             usage();
         }

@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.kitesdk.morphline.api.Record;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -13,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class SyslogParserTest {
 
     @Test
-    public void testSyslogLineParser() throws IOException {
+    public void testSyslogLineParser() throws Exception {
         String lineToParse = "<132>Jul  8 10:58:09 ossec-server ossec: Alert Level: 3; Rule: 5501 - Login session opened.; Location: ossec-server->/var/log/secure; classification:  pam,syslog,authentication_success,; Jul  8 10:58:08 ossec-server su: pam_unix(su-l:session): session opened for user root by ossec(uid=0)";
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "syslog");
@@ -34,7 +33,7 @@ public class SyslogParserTest {
     }
 
     @Test
-    public void testSyslogFileParser() throws IOException {
+    public void testSyslogFileParser() throws Exception {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "syslog");
         File fileToParse = new File("../data/ossec.syslog");
         List<Record> records = parser.parse(fileToParse);
