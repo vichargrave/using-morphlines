@@ -21,14 +21,8 @@ public class ParserApp {
         }
 
         try {
-            File fileToParse = new File(args[1]);
-            if (!fileToParse.canRead() || !fileToParse.exists()) {
-                System.err.println("Unable to read " + args[1]);
-                System.exit(-1);
-            }
-
             MorphlineParser parser = new MorphlineParser(args[0], args[2]);
-            List<Record> records = parser.parse(fileToParse);
+            List<Record> records = parser.parse(new File(args[1]));
             if (records.size() > 0) {
                 for (Record record : records) {
                     ListMultimap out = record.getFields();
@@ -39,6 +33,10 @@ public class ParserApp {
                 System.out.println("No parsed records produced");
                 System.exit(-1);
             }
+        }
+        catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            System.exit(-1);
         }
         catch (MorphlineCompilationException ex) {
             System.out.println(ex.getMessage());
