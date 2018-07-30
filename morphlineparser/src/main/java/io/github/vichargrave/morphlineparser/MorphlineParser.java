@@ -19,19 +19,19 @@ public class MorphlineParser {
     private String morphlineId;
     private Command morphline;
 
-    public MorphlineParser(String morphlineFile) throws MorphlineCompilationException {
+    public MorphlineParser(String morphlineFile) {
         collector = new Collector();
         this.morphlineFile = new File(morphlineFile);
         this.morphlineId = null;
     }
 
-    public MorphlineParser(String morphlineFile, String morphlineId) throws MorphlineCompilationException {
+    public MorphlineParser(String morphlineFile, String morphlineId) {
         collector = new Collector();
         this.morphlineFile = new File(morphlineFile);
         this.morphlineId = morphlineId;
     }
 
-    private void createMorphline() {
+    private void createMorphline() throws MorphlineCompilationException {
         morphlineContext = new MorphlineContext.Builder().build();
         morphline = new Compiler().compile(morphlineFile, morphlineId, morphlineContext, collector);
     }
@@ -48,7 +48,7 @@ public class MorphlineParser {
     }
 
     /** Parses all the lines in a file. */
-    public List<Record> parse(File fileToParse) throws IOException, FileNotFoundException {
+    public List<Record> parse(File fileToParse) throws FileNotFoundException {
         InputStream in = new BufferedInputStream(new FileInputStream(fileToParse));
         return parse(in);
     }
