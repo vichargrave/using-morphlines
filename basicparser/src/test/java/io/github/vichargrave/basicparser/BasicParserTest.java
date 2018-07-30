@@ -7,34 +7,25 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import static org.junit.Assert.assertTrue;
+
 public class BasicParserTest {
 
-    @Test(expected = MorphlineCompilationException.class)
-    public void testBasicParserApp(){
-        ParserApp app = new ParserApp( null, null);
-    }
-
     @Test
-    public void testBasicParserApp02() throws IOException {
-        ParserApp app = new ParserApp( new File("../conf/parsers.conf"), "json");
-        app.process(new String[] {"../data/tweets.json"});
+    public void testBasicParser() throws IOException {
+        ParserApp app = new ParserApp(new File("../conf/parsers.conf"));
+        assertTrue(app.process(new String[] {"../data/tweets.json"})[0]);
     }
 
     @Test (expected = MorphlineCompilationException.class)
-    public void testBasicParserApp03() throws IOException {
-        ParserApp app = new ParserApp( new File("../conf/_some_file_that_does_not_exist.conf"), "json");
-        app.process(new String[] {"../data/tweets.json"});
-    }
-
-    @Test (expected = MorphlineCompilationException.class)
-    public void testBasicParserAppr04() throws IOException {
-        ParserApp app = new ParserApp( new File("../conf/parsers.conf"), "_some_morphline_that_does_not_exist");
+    public void testBasicParserNonexistentMorphlineFile() throws IOException {
+        ParserApp app = new ParserApp(new File("../conf/_some_file_that_does_not_exist.conf"));
         app.process(new String[] {"../data/tweets.json"});
     }
 
     @Test (expected = FileNotFoundException.class)
-    public void testBasicParserApp05() throws IOException {
-        ParserApp app = new ParserApp( new File("../conf/parsers.conf"), "json");
+    public void testBasicParserAppNonExistentDataFile() throws IOException {
+        ParserApp app = new ParserApp( new File("../conf/parsers.conf"));
         app.process(new String[] {"../data/_some_file_that_does_not_exist.json"});
     }
 }
