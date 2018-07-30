@@ -18,7 +18,7 @@ public class SyslogParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "syslog");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() < 1) {
+        if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("syslog_timestamp", "Jul  8 10:58:09", out.get("syslog_timestamp").get(0));

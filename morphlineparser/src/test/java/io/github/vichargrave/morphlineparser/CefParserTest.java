@@ -18,7 +18,7 @@ public class CefParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "cef");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() < 1) {
+        if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("Violation", "APPFW_SAFECOMMERCE_XFORM", out.get("Violation").get(0));

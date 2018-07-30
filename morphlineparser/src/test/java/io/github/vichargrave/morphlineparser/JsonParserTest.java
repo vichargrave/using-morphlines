@@ -19,7 +19,7 @@ public class JsonParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "json");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() < 1) {
+        if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
@@ -82,7 +82,7 @@ public class JsonParserTest {
 
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf");
         List<Record> records = parser.parse(lineToParse);
-        if (records.size() < 1) {
+        if (records.size() > 0) {
             ListMultimap out = records.get(0).getFields();
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
