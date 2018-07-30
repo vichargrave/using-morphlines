@@ -48,7 +48,7 @@ public class MorphlineParser {
     }
 
     /** Parses all the lines in a file. */
-    public List<Record> parse(File fileToParse) throws IOException {
+    public List<Record> parse(File fileToParse) throws IOException, FileNotFoundException {
         InputStream in = new BufferedInputStream(new FileInputStream(fileToParse));
         return parse(in);
     }
