@@ -34,7 +34,7 @@ public class ParserApp {
             record.put(Fields.ATTACHMENT_BODY, in);
             Notifications.notifyStartSession(morphline);
             outcome[i] = morphline.process(record);
-            if (!outcome[i]) {
+            if (outcome[i] == false) {
                 System.out.println("Morphline failed to process record: " + record + "for file " + inputs[i]);
             }
             in.close();
@@ -48,7 +48,7 @@ public class ParserApp {
             usage();
         }
 
-        ParserApp driver = new ParserApp(new File(args[0]));
-        boolean[] outcome = driver.process(Arrays.copyOfRange(args, 2, args.length));
+        ParserApp app = new ParserApp(new File(args[0]));
+        app.process(Arrays.copyOfRange(args, 1, args.length));
     }
 }
