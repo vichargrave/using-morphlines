@@ -12,7 +12,7 @@ public class BasicParserTest {
 
     @Test
     public void testBasicParser() throws Exception {
-        ParserApp app = new ParserApp(new File("../conf/parsers.conf"));
+        ParserApp app = new ParserApp(new File("../conf/jsonParser.conf"));
         assertTrue(app.process(new String[] {"../data/tweets.json"})[0]);
     }
 
