@@ -10,10 +10,10 @@ import org.kitesdk.morphline.api.Record;
 
 import static org.junit.Assert.assertTrue;
 
-public class BasicParserTest {
+public class MorphlineParserTest {
 
     @Test
-    public void testBasicParser() throws Exception {
+    public void testMorphlineParser() throws Exception {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "json");
         File fileToParse = new File("../data/tweets.json");
         List<Record> records = parser.parse(fileToParse);
@@ -21,14 +21,14 @@ public class BasicParserTest {
     }
 
     @Test (expected = MorphlineCompilationException.class)
-    public void testBasicParserNonexistentMorphlineFile() throws Exception {
+    public void testMorphlineParserNonexistentMorphlineFile() throws Exception {
         MorphlineParser parser = new MorphlineParser("../conf/_some_file_that_does_not_exist.conf");
         File fileToParse = new File("../data/tweets.json");
         parser.parse(fileToParse);
     }
 
     @Test (expected = FileNotFoundException.class)
-    public void testBasicParserAppNonExistentDataFile() throws Exception {
+    public void testMorphlineNonExistentDataFile() throws Exception {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf");
         File fileToParse = new File("../data/_some_file_that_does_not_exist.json");
         parser.parse(fileToParse);
