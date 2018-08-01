@@ -1,11 +1,9 @@
 package io.github.vichargrave.morphlineparser;
 
-import com.google.common.collect.ListMultimap;
 import org.junit.Test;
 import org.kitesdk.morphline.api.Record;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -19,7 +17,7 @@ public class CefParserTest {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "cef");
         List<Record> records = parser.parse(lineToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("Violation", "APPFW_SAFECOMMERCE_XFORM", out.get("Violation").get(0));
             assertEquals("Company", "Citrix", out.get("Company").get(0));
@@ -55,7 +53,7 @@ public class CefParserTest {
         File fileToParse = new File("../data/netscaler.cef");
         List<Record> records = parser.parse(fileToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("Violation", "APPFW_SAFECOMMERCE_XFORM", out.get("Violation").get(0));
             assertEquals("Company", "Citrix", out.get("Company").get(0));

@@ -1,6 +1,5 @@
 package io.github.vichargrave.morphlineparser;
 
-import com.google.common.collect.ListMultimap;
 import org.junit.Test;
 import org.kitesdk.morphline.api.Record;
 
@@ -18,7 +17,7 @@ public class SyslogParserTest {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "syslog");
         List<Record> records = parser.parse(lineToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("syslog_timestamp", "Jul  8 10:58:09", out.get("syslog_timestamp").get(0));
             assertEquals("syslog_host", "ossec-server", out.get("syslog_host").get(0));
@@ -38,7 +37,7 @@ public class SyslogParserTest {
         File fileToParse = new File("../data/ossec.syslog");
         List<Record> records = parser.parse(fileToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("syslog_timestamp", "Jul  8 10:58:09", out.get("syslog_timestamp").get(0));
             assertEquals("syslog_host", "ossec-server", out.get("syslog_host").get(0));

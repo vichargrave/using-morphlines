@@ -1,6 +1,5 @@
 package io.github.vichargrave.morphlineparser;
 
-import com.google.common.collect.ListMultimap;
 import org.junit.Test;
 import org.kitesdk.morphline.api.Record;
 
@@ -18,9 +17,9 @@ public class JsonParserTest {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf", "json");
         List<Record> records = parser.parse(lineToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
-            assertEquals("id", 11111112, out.get("id").get(0));
+            assertEquals("id", 11111112, out.get("id").get(0)); //.get(0));
             assertEquals("id_str", "1234567891", out.get("id_str").get(0));
             assertEquals("text", "sample tweet one", out.get("text").get(0));
             assertEquals("created_at", "Wed Sep 05 01:01:01 +0000 1985", out.get("created_at").get(0));
@@ -49,7 +48,7 @@ public class JsonParserTest {
         File fileToParse = new File("../data/tweets.json");
         List<Record> records = parser.parse(fileToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
             assertEquals("id_str", "1234567891", out.get("id_str").get(0));
@@ -81,7 +80,7 @@ public class JsonParserTest {
         MorphlineParser parser = new MorphlineParser("../conf/parsers.conf");
         List<Record> records = parser.parse(lineToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
             assertEquals("id_str", "1234567891", out.get("id_str").get(0));
@@ -112,7 +111,7 @@ public class JsonParserTest {
         File fileToParse = new File("../data/tweets.json");
         List<Record> records = parser.parse(fileToParse);
         if (records.size() > 0) {
-            ListMultimap out = records.get(0).getFields();
+            Record out = records.get(0);
             System.out.println(out);
             assertEquals("id", 11111112, out.get("id").get(0));
             assertEquals("id_str", "1234567891", out.get("id_str").get(0));

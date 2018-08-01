@@ -25,8 +25,7 @@ public class ParserApp {
             List<Record> records = parser.parse(new File(args[1]));
             if (records.size() > 0) {
                 for (Record record : records) {
-                    ListMultimap out = record.getFields();
-                    System.out.println(out.toString());
+                    System.out.println(record.toString());
                 }
             }
             else {
