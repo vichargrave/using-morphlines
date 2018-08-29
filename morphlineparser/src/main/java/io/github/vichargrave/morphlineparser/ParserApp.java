@@ -6,8 +6,6 @@ import org.kitesdk.morphline.api.Record;
 import java.io.*;
 import java.util.List;
 
-import com.google.common.collect.ListMultimap;
-
 public class ParserApp {
 
     private static void usage() {

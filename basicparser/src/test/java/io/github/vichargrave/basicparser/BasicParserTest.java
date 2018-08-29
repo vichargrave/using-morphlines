@@ -11,9 +11,15 @@ import static org.junit.Assert.assertTrue;
 public class BasicParserTest {
 
     @Test
-    public void testBasicParser() throws Exception {
+    public void testJsonBasicParser() throws Exception {
         ParserApp app = new ParserApp(new File("../conf/jsonParser.conf"));
         assertTrue(app.process(new String[] {"../data/tweets.json"})[0]);
+    }
+
+    @Test
+    public void testSyslogBasicParser() throws Exception {
+        ParserApp app = new ParserApp(new File("../conf/syslogParser.conf"));
+        assertTrue(app.process(new String[] {"../data/ossec.syslog"})[0]);
     }
 
     @Test (expected = MorphlineCompilationException.class)
