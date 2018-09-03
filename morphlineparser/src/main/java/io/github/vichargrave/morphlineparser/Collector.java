@@ -9,7 +9,7 @@ import org.kitesdk.morphline.api.Record;
 
 import com.google.common.base.Preconditions;
 
-public final class Collector implements Command {
+public class Collector implements Command {
 
     private Command parent;
     private List<Record> records;
