@@ -30,7 +30,7 @@ public class MorphlineParser {
     /**
      * Creates a Collector and Morphlines parser.
      * @param morphlineFile  File containing the Morphlines scripts.
-     * @param morphlineId  ID of the scripto use from the file.
+     * @param morphlineId  ID of the script use from the file.
      */
     public MorphlineParser(final String morphlineFile, final String morphlineId) {
         collector = new Collector();
