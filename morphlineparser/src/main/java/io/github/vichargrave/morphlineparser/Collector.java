@@ -37,7 +37,7 @@ public class Collector implements Command {
     }
 
     /**
-     *
+     * Indicates the start of a parsing session.
      * @param notification
      */
     @Override
