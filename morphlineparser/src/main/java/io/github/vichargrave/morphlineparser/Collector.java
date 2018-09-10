@@ -11,34 +11,56 @@ import com.google.common.base.Preconditions;
 
 public class Collector implements Command {
 
-    private Command parent;
-    private List<Record> records;
+    final private List<Record> records;
 
+    /**
+     * Creates a new Record list.
+     */
     public Collector() {
-        reset();
+        records = new ArrayList<>();
     }
 
+    /**
+     * Clears the current list of Records.
+     */
     public void reset() {
-        records = new ArrayList<Record>();
+        records.clear();
     }
 
+    /**
+     * Not tracking parent,so returns null.
+     * @return null
+     */
     @Override
     public Command getParent() {
-        return parent;
+        return null;
     }
 
+    /**
+     *
+     * @param notification
+     */
     @Override
-    public void notify(Record notification) {
+    public void notify(final Record notification) {
         Notifications.containsLifecycleEvent(notification, Notifications.LifecycleEvent.START_SESSION);
     }
 
+    /**
+     * Called after parsing to add Records to list.
+     * @param record  Parsed Record
+     * @return true
+     */
     @Override
-    public boolean process(Record record) {
+    public boolean process(final Record record) {
         Preconditions.checkNotNull(record);
         records.add(record);
         return true;
     }
 
+    /**
+     * Returns the list of parsed Records.
+     * @return records
+     */
     public List<Record> getRecords() {
         return records;
     }

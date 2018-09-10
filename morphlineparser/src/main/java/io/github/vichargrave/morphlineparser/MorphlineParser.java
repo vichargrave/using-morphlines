@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.solr.common.util.ContentStreamBase;
 import org.kitesdk.morphline.api.Command;
-import org.kitesdk.morphline.api.MorphlineCompilationException;
 import org.kitesdk.morphline.api.MorphlineContext;
 import org.kitesdk.morphline.api.Record;
 import org.kitesdk.morphline.base.Compiler;
@@ -13,50 +12,68 @@ import org.kitesdk.morphline.base.Fields;
 import org.kitesdk.morphline.base.Notifications;
 
 public class MorphlineParser {
-    private Collector collector;
-    private MorphlineContext morphlineContext;
-    private File morphlineFile;
-    private String morphlineId;
-    private Command morphline;
+    final private Collector collector;
+    final private Command morphline;
 
-    public MorphlineParser(String morphlineFile) {
+    /**
+     * Creates a Collector and Morphlines parser.
+     * @param morphlineFile  File containing the Morphlines script.
+     */
+    public MorphlineParser(final String morphlineFile) {
         collector = new Collector();
-        this.morphlineFile = new File(morphlineFile);
-        this.morphlineId = null;
+        morphline = new Compiler().compile(new File(morphlineFile),
+                null,
+                new MorphlineContext.Builder().build(),
+                collector);
     }
 
-    public MorphlineParser(String morphlineFile, String morphlineId) {
+    /**
+     * Creates a Collector and Morphlines parser.
+     * @param morphlineFile  File containing the Morphlines scripts.
+     * @param morphlineId  ID of the scripto use from the file.
+     */
+    public MorphlineParser(final String morphlineFile, final String morphlineId) {
         collector = new Collector();
-        this.morphlineFile = new File(morphlineFile);
-        this.morphlineId = morphlineId;
+        morphline = new Compiler().compile(new File(morphlineFile),
+                morphlineId,
+                new MorphlineContext.Builder().build(),
+                collector);
     }
 
-    private void createMorphline() throws MorphlineCompilationException {
-        morphlineContext = new MorphlineContext.Builder().build();
-        morphline = new Compiler().compile(morphlineFile, morphlineId, morphlineContext, collector);
-    }
-
-    /** Parses lines from any InputStream. The other two parse methods call this one. */
-    public List<Record> parse(InputStream in) {
+    /**
+     * Parses lines from any InputStream. The other two parse methods call this one.
+     * @param in  InputStream of raw records.
+     * @return List of parsed records.
+     */
+    private List<Record> parse(final InputStream in) {
         collector.reset();
-        createMorphline();
-        Record record = new Record();
+        final Record record = new Record();
         record.put(Fields.ATTACHMENT_BODY, in);
         Notifications.notifyStartSession(morphline);
         morphline.process(record);
         return collector.getRecords();
     }
 
-    /** Parses all the lines in a file. */
-    public List<Record> parse(File fileToParse) throws FileNotFoundException {
-        InputStream in = new BufferedInputStream(new FileInputStream(fileToParse));
+    /**
+     * Parses all the lines in a file.
+     * @param fileToParse  File containing the raw records to parse.
+     * @return List of parsed records.
+     * @throws FileNotFoundException
+     */
+    public List<Record> parse(final File fileToParse) throws FileNotFoundException {
+        final InputStream in = new BufferedInputStream(new FileInputStream(fileToParse));
         return parse(in);
     }
 
-    /** Parse 1 or more lines in a String buffer. */
-    public List<Record> parse(String linesToParse) throws IOException {
-        ContentStreamBase.StringStream stream = new ContentStreamBase.StringStream(linesToParse);
-        InputStream in = stream.getStream();
+    /**
+     * Parse 1 or more lines in a String buffer.
+     * @param linesToParse
+     * @return List of parsed records.
+     * @throws IOException
+     */
+    public List<Record> parse(final String linesToParse) throws IOException {
+        final ContentStreamBase.StringStream stream = new ContentStreamBase.StringStream(linesToParse);
+        final InputStream in = stream.getStream();
         return parse(in);
     }
 }

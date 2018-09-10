@@ -1,6 +1,5 @@
 package io.github.vichargrave.morphlineparser;
 
-import org.kitesdk.morphline.api.MorphlineCompilationException;
 import org.kitesdk.morphline.api.Record;
 
 import java.io.*;
@@ -32,10 +31,6 @@ public class ParserApp {
             }
         }
         catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-            System.exit(-1);
-        }
-        catch (MorphlineCompilationException ex) {
             System.out.println(ex.getMessage());
             System.exit(-1);
         }
