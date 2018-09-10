@@ -18,8 +18,8 @@ public class ParserApp {
         }
 
         try {
-            MorphlineParser parser = new MorphlineParser(args[0], args[2]);
-            List<Record> records = parser.parse(new File(args[1]));
+            final MorphlineParser parser = new MorphlineParser(args[0], args[2]);
+            final List<Record> records = parser.parse(new File(args[1]));
             if (records.size() > 0) {
                 for (Record record : records) {
                     System.out.println(record.toString());
