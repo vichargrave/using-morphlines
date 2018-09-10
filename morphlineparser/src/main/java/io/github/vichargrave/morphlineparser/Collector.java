@@ -28,7 +28,7 @@ public class Collector implements Command {
     }
 
     /**
-     * Not tracking parent,so returns null.
+     * Not tracking parent, so returns null.
      * @return null
      */
     @Override
@@ -46,7 +46,7 @@ public class Collector implements Command {
     }
 
     /**
-     * Called after parsing to add Records to list.
+     * Called after parsing to add a record to list.
      * @param record  Parsed Record
      * @return true
      */
@@ -58,7 +58,7 @@ public class Collector implements Command {
     }
 
     /**
-     * Returns the list of parsed Records.
+     * Returns the list of parsed records.
      * @return records
      */
     public List<Record> getRecords() {
