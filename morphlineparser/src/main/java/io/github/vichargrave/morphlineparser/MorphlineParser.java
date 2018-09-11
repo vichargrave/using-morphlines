@@ -16,7 +16,7 @@ public class MorphlineParser {
     final private Command morphline;
 
     /**
-     * Creates a Collector and Morphlines parser.
+     * Creates a Collector and a Morphlines parser.
      * @param morphlineFile  File containing the Morphlines script.
      */
     public MorphlineParser(final String morphlineFile) {
@@ -28,9 +28,9 @@ public class MorphlineParser {
     }
 
     /**
-     * Creates a Collector and Morphlines parser.
+     * Creates a Collector and a Morphlines parser.
      * @param morphlineFile  File containing the Morphlines scripts.
-     * @param morphlineId  ID of the scripto use from the file.
+     * @param morphlineId  ID of the script to use from the file.
      */
     public MorphlineParser(final String morphlineFile, final String morphlineId) {
         collector = new Collector();
