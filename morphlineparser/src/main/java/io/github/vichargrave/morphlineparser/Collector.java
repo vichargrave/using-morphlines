@@ -11,14 +11,7 @@ import com.google.common.base.Preconditions;
 
 public class Collector implements Command {
 
-    final private List<Record> records;
-
-    /**
-     * Creates a new Record list.
-     */
-    public Collector() {
-        records = new ArrayList<>();
-    }
+    final private List<Record> records = new ArrayList<>();
 
     /**
      * Clears the current list of Records.

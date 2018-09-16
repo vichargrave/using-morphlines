@@ -12,15 +12,14 @@ import org.kitesdk.morphline.base.Fields;
 import org.kitesdk.morphline.base.Notifications;
 
 public class MorphlineParser {
-    final private Collector collector;
+    final private Collector collector = new Collector();
     final private Command morphline;
 
     /**
-     * Creates a Collector and Morphlines parser.
+     * Creates the Morphlines parser.
      * @param morphlineFile  File containing the Morphlines script.
      */
     public MorphlineParser(final String morphlineFile) {
-        collector = new Collector();
         morphline = new Compiler().compile(new File(morphlineFile),
                 null,
                 new MorphlineContext.Builder().build(),
@@ -28,12 +27,10 @@ public class MorphlineParser {
     }
 
     /**
-     * Creates a Collector and Morphlines parser.
-     * @param morphlineFile  File containing the Morphlines scripts.
-     * @param morphlineId  ID of the script use from the file.
+     * Creates the Morphlines parser.
+     * @param morphlineFile  File containing the Morphlines script(s).
      */
     public MorphlineParser(final String morphlineFile, final String morphlineId) {
-        collector = new Collector();
         morphline = new Compiler().compile(new File(morphlineFile),
                 morphlineId,
                 new MorphlineContext.Builder().build(),
