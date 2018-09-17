@@ -62,7 +62,7 @@ public class MorphlineParser {
 
     /**
      * Parse 1 or more lines in a String buffer.
-     * @param linesToParse
+     * @param linesToParse  One or more raw lines to parse.
      * @return List of parsed records.
      */
     public List<Record> parse(final String linesToParse) {
