@@ -3,7 +3,6 @@ package io.github.vichargrave.morphlineparser;
 import java.io.*;
 import java.util.List;
 
-import org.apache.solr.common.util.ContentStreamBase;
 import org.kitesdk.morphline.api.Command;
 import org.kitesdk.morphline.api.MorphlineContext;
 import org.kitesdk.morphline.api.Record;
@@ -58,8 +57,7 @@ public class MorphlineParser {
      * @throws FileNotFoundException
      */
     public List<Record> parse(final File fileToParse) throws FileNotFoundException {
-        final InputStream in = new BufferedInputStream(new FileInputStream(fileToParse));
-        return parse(in);
+        return parse(new BufferedInputStream(new FileInputStream(fileToParse)));
     }
 
     /**
@@ -69,8 +67,6 @@ public class MorphlineParser {
      * @throws IOException
      */
     public List<Record> parse(final String linesToParse) throws IOException {
-        final ContentStreamBase.StringStream stream = new ContentStreamBase.StringStream(linesToParse);
-        final InputStream in = stream.getStream();
-        return parse(in);
+        return parse(new ByteArrayInputStream(linesToParse.getBytes()));
     }
 }
