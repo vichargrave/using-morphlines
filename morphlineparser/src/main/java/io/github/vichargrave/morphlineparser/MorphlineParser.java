@@ -64,9 +64,8 @@ public class MorphlineParser {
      * Parse 1 or more lines in a String buffer.
      * @param linesToParse
      * @return List of parsed records.
-     * @throws IOException
      */
-    public List<Record> parse(final String linesToParse) throws IOException {
+    public List<Record> parse(final String linesToParse) {
         return parse(new ByteArrayInputStream(linesToParse.getBytes()));
     }
 }
